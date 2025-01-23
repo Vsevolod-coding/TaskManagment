@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Опубликовать Задачу</h2>
+    <form [formGroup]="postTaskForm" (ngSubmit)="postTask()">
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Заголовок</mat-label>
+            <input matInput type="text" placeholder="Заголовок" formControlName="title"/>
+            <mat-error *ngIf="postTaskForm.get('title')?.hasError('required')">Поле должно быть заполнено!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Описание</mat-label>
+            <textarea matInput placeholder="Описание" formControlName="description"></textarea>
+            <mat-error *ngIf="postTaskForm.get('description')?.hasError('required')">Поле должно быть заполнено!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Срок Выполнения</mat-label>
+            <input matInput [matDatepicker]="dueDatePicker" placeholder="Выбрать срок выполнения" formControlName="dueDate">
+            <mat-datepicker-toggle matSuffix [for]="dueDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #dueDatePicker></mat-datepicker>
+            <mat-error *ngIf="postTaskForm.get('dueDate')?.hasError('required')">Поле должно быть заполнено!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Выбрать приоритет</mat-label>
+            <mat-select formControlName="priority" name="Priority">
+                <mat-option *ngFor="let priority of listOfPriorities" [value]="priority">
+                    {{priority}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="postTaskForm.get('priority')?.hasError('required')">Поле должно быть заполнено!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Выбрать сотрудника</mat-label>
+            <mat-select formControlName="employeeId" name="employeeId">
+                <mat-option *ngFor="let employee of listOfEmployees" [value]="employee.name">
+                    {{employee.name}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="postTaskForm.get('employeeId')?.hasError('required')">Поле должно быть заполнено!</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="postTaskForm.invalid">POST</button>
+    </form> 
+</div>

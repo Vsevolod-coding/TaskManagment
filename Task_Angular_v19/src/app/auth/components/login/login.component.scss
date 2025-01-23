@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    font-family: "Roboto", serif;
+}
+
+mat-card {
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+
+    @media screen and (max-width: 600px) {
+        max-width: 85%;
+    }
+}
+
+mat-card-title {
+    font-weight: 600;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 65%;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    mat-card-title {
+        font-size: 20px;
+    }
+
+    mat-form-field {
+        margin-bottom: 10px;
+    }
+}
+
+mat-error {
+    color: #ff5100 !important;
+    font-weight: 200 !important;
+    background-color: transparent;
+}
+
+.centered-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    gap: 8px;               
+  }
+  
+  .centered-actions span {
+    color: black;
+    font-size: 16px;
+  }
+  
+  .centered-actions button {
+    width: 20%;
+    font-size: 15px;
+  }
+
+ .mat-btn {
+    color: white; // Цвет текста по умолчанию
+    background-color: rgb(63, 81, 181);
+    transition: all 0.4s ease;
+    &:hover {
+        color: rgb(63, 81, 181); // Текст становится черным
+        background-color: white; // Фон становится белым
+      }
+  
+      &:active {
+          transform: scale(0.95); // Уменьшение размера до 95% от исходного
+          transition: transform 0.1s ease; // Плавное изменение масштаба при нажатии
+      }
+ }
+
+ mat-icon {
+    color: rgb(63, 81, 181);
+ }

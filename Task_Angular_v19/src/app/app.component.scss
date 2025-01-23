@@ -1,0 +1,45 @@
+.navbar {
+    height: auto; // Занимает только высоту, необходимую для содержимого
+    padding: 16px 0; // Отступы сверху и снизу для красоты
+    display: flex;
+    justify-content: center; // Центрируем содержимое горизонтально
+    align-items: center; // Центрируем содержимое вертикально внутри `mat-toolbar`
+    flex-direction: column; // Размещаем элементы вертикально
+  
+    .content {
+      text-align: center; // Центрируем текст внутри
+    }
+  
+    .title {
+      font-size: 40px;
+      font-weight: bold;
+    }
+  
+    .button-row {
+      display: flex;
+      justify-content: center; // Кнопки расположены по центру
+      gap: 60px;
+      margin-top: 25px; // Расстояние между кнопками
+    }
+  
+    button {
+        color: white; // Цвет текста по умолчанию
+        background-color: transparent; // Прозрачный фон
+        border: 2px solid white; // Белая рамка
+        font-size: 24px;
+        padding: 24px 28px;
+        border-radius: 6px;
+        transition: all 0.4s ease; // Плавный переход для всех свойств
+    
+        &:hover {
+          color: black; // Текст становится черным
+          background-color: white; // Фон становится белым
+        }
+
+        &:active {
+            transform: scale(0.95); // Уменьшение размера до 95% от исходного
+            transition: transform 0.1s ease; // Плавное изменение масштаба при нажатии
+        }
+    }
+  }
+  
